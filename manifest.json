@@ -1,0 +1,39 @@
+{
+  "name": "Online Management of Your Team’s Work, Projects, and Tasks - Officelite",
+	"short_name": "Officelite",
+	"description": "With Officelite, you can work from anywhere at any time. With Officelite, you can keep remote and distributed teams, as well as your entire organization, focused on their goals, projects, and tasks.",
+	"start_url": "/",
+	"scope": "/",
+  "icons": [
+    {
+      "src": "/favicons/frontendmentor-100x100.png",
+      "type": "image/png",
+      "sizes": "100x100"
+    },
+    {
+      "src": "/favicons/frontendmentor-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/frontendmentor.png",
+      "type": "image/png",
+      "sizes": "320x320"
+    },
+    {
+      "src": "/favicons/frontendmentor-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/svg/frontendmentor-mobile.svg",
+      "type": "image/svg",
+      "sizes": "192x192 512x512",
+      "purpose": "maskable"
+    }
+	],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,133 @@
+@use "../abstracts" as *;
+
+.pricing {
+  position: relative;
+  padding-block: rem(100);
+}
+
+.pricing::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  background-color: var(--primary-color-500);
+  width: 100%;
+  height: 50%;
+  content: "";
+}
+
+.pricing .container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+
+  @include breakpoint-up("small") {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.pricing__card {
+  box-shadow: 0 rem(50) rem(50) rem(-25) rgba(75, 92, 154, 0.25);
+  border-radius: rem(13);
+  padding: var(--padding-card);
+  text-align: center;
+
+  @include breakpoint-up("tiny") {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-template-areas:
+      "text list"
+      "button list";
+    row-gap: rem(28);
+    justify-content: space-evenly;
+    text-align: left;
+  }
+
+  @include breakpoint-up("small") {
+    display: block;
+    text-align: center;
+  }
+}
+
+.pricing__card--white {
+  background-color: var(--white-100);
+}
+
+.pricing__card--white .pricing__container {
+  color: var(--primary-color-400);
+}
+
+.pricing__card--white .pricing__title,
+.pricing__card--white .pricing__price,
+.pricing__card--white .pricing__details {
+  color: inherit;
+}
+
+.pricing__card--white .pricing__button {
+  @include focus-visible(var(--primary-color-200));
+}
+
+.pricing__card--blue {
+  background-image: url("../svg/bg-pattern-pricing.svg");
+  background-position: top center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color-200);
+  color: var(--white-100);
+}
+
+.pricing__card--blue .pricing__container {
+  color: inherit;
+}
+
+.pricing__card--blue .pricing__title,
+.pricing__card--blue .pricing__price,
+.pricing__card--blue .pricing__details {
+  color: inherit;
+}
+
+.pricing__card--blue .pricing__button {
+  @include focus-visible(var(--white-100));
+}
+
+.pricing__container {
+  @include breakpoint-up("tiny") {
+    grid-area: text;
+  }
+}
+
+.pricing__title {
+  margin-block-end: rem(40);
+  font-size: rem(20);
+
+  @include breakpoint-up("tiny") {
+    margin-block-end: rem(16);
+  }
+}
+
+.pricing__price {
+  margin-block-end: rem(8);
+  font-weight: 700;
+  font-size: rem(56);
+}
+
+.pricing__benefits {
+  margin-block-start: rem(56);
+  margin-block-end: rem(32);
+
+  @include breakpoint-up("tiny") {
+    grid-area: list;
+  }
+}
+
+.pricing__item:not(:last-child) {
+  margin-block-end: rem(16);
+}
+
+.pricing__button {
+  @include breakpoint-up("tiny") {
+    grid-area: button;
+    width: fit-content;
+  }
+}

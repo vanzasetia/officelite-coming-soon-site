@@ -1,0 +1,167 @@
+@use "../abstracts" as *;
+
+:root {
+  --primary-color-100: hsl(228, 100%, 75%);
+  --primary-color-200: hsl(228, 100%, 66%);
+  --primary-color-300: hsl(227, 14%, 52%);
+  --primary-color-400: hsl(227, 22%, 26%);
+  --primary-color-500: hsl(228, 22%, 19%);
+  --error-color: hsl(0, 83%, 65%);
+  --white-100: hsl(0, 0%, 100%);
+  --white-200: hsl(0, 0%, 98%);
+  --landmarks-font-size: clamp(1rem, 0.95rem + 0.26vw, 1.13rem);
+  --title-font-size: clamp(2.19rem, 1.66rem + 2.66vw, 3.5rem);
+  --container-width: min(100vw - 10%, #{rem(1110)});
+  --padding-header-small: clamp(#{rem(46)}, 6%, #{rem(81)});
+  --padding-header-medium: clamp(#{rem(80)}, 12%, #{rem(110)});
+  --padding-card: clamp(2.5rem, 2.3rem + 1.01vw, 3rem);
+  --transition: 150ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: rgb(22, 95, 204);
+  color: rgb(242, 242, 242);
+}
+
+::-moz-selection {
+  background-color: rgb(22, 95, 204);
+  color: rgb(242, 242, 242);
+}
+
+/**
+ * Screen Reader Class
+ * 
+ * To hide content visually.
+ *
+ * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+.sr-only {
+  -webkit-clip-path: inset(50%) !important;
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+body {
+  background-color: var(--white-200);
+}
+
+header,
+main,
+footer {
+  color: var(--primary-color-300);
+  font-size: var(--landmarks-font-size);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color-400);
+}
+
+h1 {
+  font-size: var(--title-font-size);
+  line-height: 1.15;
+}
+
+p {
+  font-size: 1em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * Set font-size on Form Elements for a 
+ * Better Mobile Experience
+ *
+ * To avoid mobile browsers (iOS Safari,
+ * et al.) from zooming in on HTML form 
+ * elements when a <select> drop-down is
+ * tapped, add font-size to the selector
+ * rule.
+ *
+ * Source: https://github.com/AllThingsSmitty/css-protips#set-font-size-on-form-elements-for-a-better-mobile-experience
+ */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 1rem;
+}
+
+/** 
+ * Using currentColor to inherit the 
+ * color value 
+ */
+svg path {
+  fill: currentColor;
+}
+
+.skip-content {
+  display: inline-block;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  transform: translateX(-200%);
+  z-index: 200;
+  background-color: rgb(250, 250, 250);
+  padding: 1em 2em;
+  font-size: 1.25rem;
+  text-decoration: 0.1em solid;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skip-content {
+    transition: transform 0.3s ease 0s;
+  }
+}
+
+.skip-content:focus,
+.skip-content:focus-visible {
+  transform: translate(0);
+  outline: 0.2em dashed rgb(18, 221, 201);
+  outline-offset: 0.25em;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0.0625rem;
+  height: 0;
+}

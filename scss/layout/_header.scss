@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+.header {
+  padding-block-start: var(--padding-header-small);
+  padding-block-end: var(--padding-header-medium);
+}
+
+.header .container {
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint-up("very-small") {
+    justify-content: flex-start;
+  }
+}
+
+.header__home {
+  @include focus-visible(var(--primary-color-200));
+}

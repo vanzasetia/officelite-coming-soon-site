@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+.button {
+  border-radius: 1.75em;
+  padding: rem(14) rem(42);
+  font-weight: 700;
+  font-size: rem(16);
+  text-decoration: none;
+}
+
+.button--inline-block {
+  display: inline-block;
+}
+
+.button--blue {
+  background-color: var(--primary-color-200);
+  color: var(--white-100);
+
+  @include on-event {
+    background-color: var(--primary-color-100);
+  }
+
+  @include prefers-motion {
+    transition: background-color var(--transition);
+  }
+}
+
+.button--light-blue {
+  background-color: hsla(228, 100%, 66%, 0.15);
+  color: var(--primary-color-200);
+
+  @include on-event {
+    background-color: hsla(228, 100%, 66%, 0.25);
+  }
+
+  @include prefers-motion {
+    transition: background-color var(--transition);
+  }
+}
+
+.button--white {
+  background-color: var(--white-100);
+  color: var(--primary-color-200);
+
+  @include on-event {
+    color: var(--primary-color-100);
+  }
+
+  @include prefers-motion {
+    transition: color var(--transition);
+  }
+}
+
+.button--box-shadow {
+  box-shadow: 0 rem(25) rem(25) rem(-10) hsla(227, 52%, 50%, 0.247);
+}

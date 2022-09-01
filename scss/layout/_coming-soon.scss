@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.coming-soon {
+  background-color: var(--primary-color-500);
+  padding-block-end: rem(100);
+  color: var(--white-100);
+  text-align: center;
+
+  @include breakpoint-up("small") {
+    text-align: left;
+  }
+}
+
+.coming-soon .container {
+  @include breakpoint-up("small") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.coming-soon__button {
+  margin-block-start: rem(48);
+
+  @include focus-visible(var(--white-100));
+
+  @include breakpoint-up("small") {
+    margin-block-start: 0;
+  }
+}

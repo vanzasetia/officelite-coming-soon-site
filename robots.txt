@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://officelitetool.netlify.app/sitemap.xml

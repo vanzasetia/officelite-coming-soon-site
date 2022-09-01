@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+.timer__title {
+  margin-block-end: rem(16);
+  color: inherit;
+  font-size: rem(16);
+  letter-spacing: rem(5);
+  text-transform: uppercase;
+}
+
+.timer__date {
+  color: var(--primary-color-200);
+}
+
+.timer__container {
+  display: flex;
+  justify-content: center;
+  gap: rem(16);
+}
+
+.timer__card {
+  flex-basis: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem);
+  border-radius: rem(13);
+  padding: rem(16);
+  text-align: center;
+}
+
+.timer__card--dark {
+  background-color: var(--primary-color-400);
+}
+
+.timer__number {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.04rem + 3.54vw, 3.5rem);
+}
+
+.timer__category {
+  display: block;
+  opacity: 0.5;
+  font-size: clamp(0.75rem, 0.65rem + 0.51vw, 1rem);
+}
