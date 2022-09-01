@@ -20,7 +20,7 @@
 .hero__image {
   margin-inline: auto;
   margin-block-end: rem(64);
-  width: max(rem(175), 43%);
+  width: clamp(rem(175), 35vw, rem(475));
 
   @include breakpoint-up("very-small") {
     margin-inline: 0;

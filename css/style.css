@@ -427,7 +427,7 @@ svg path {
   margin-inline: auto;
   -webkit-margin-after: 4rem;
   margin-block-end: 4rem;
-  width: max(10.9375rem, 43%);
+  width: clamp(10.9375rem, 35vw, 29.6875rem);
 }
 @media screen and (min-width: 48em) {
   .hero__image {
