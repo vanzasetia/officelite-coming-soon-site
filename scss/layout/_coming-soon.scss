@@ -19,6 +19,15 @@
   }
 }
 
+/**
+ * Make the elements have higher z-index
+ * than the background image.
+ */
+.coming-soon .container > * {
+  position: relative;
+  z-index: 2;
+}
+
 .coming-soon__button {
   margin-block-start: rem(48);
 

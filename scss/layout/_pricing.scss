@@ -27,6 +27,15 @@
   }
 }
 
+/**
+ * Make the elements have higher z-index
+ * than the background image.
+ */
+.pricing .container > * {
+  position: relative;
+  z-index: 2;
+}
+
 .pricing__card {
   box-shadow: 0 rem(50) rem(50) rem(-25) rgba(75, 92, 154, 0.25);
   border-radius: rem(13);
@@ -70,8 +79,8 @@
 
 .pricing__card--blue {
   background-image: url("../svg/bg-pattern-pricing.svg");
-  background-position: top center;
-  background-size: 100%;
+  background-position: top rem(-379) center;
+  background-size: rem(880);
   background-repeat: no-repeat;
   background-color: var(--primary-color-200);
   color: var(--white-100);

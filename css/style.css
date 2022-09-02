@@ -377,6 +377,36 @@ svg path {
   font-size: clamp(0.75rem, 0.65rem + 0.51vw, 1rem);
 }
 
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper::after {
+  position: absolute;
+  z-index: -1;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.wrapper--top::after {
+  top: clamp(-26.19rem, -4.55rem - 30.37vw, -10.62rem);
+  left: clamp(-2.62rem, -19.65rem + 85.12vw, 41rem);
+  background-image: url("../svg/bg-pattern-header.svg");
+  width: clamp(28.63rem, 7.07rem + 91.97vw, 70.88rem);
+  height: clamp(28.63rem, 7.07rem + 91.97vw, 70.88rem);
+}
+
+.wrapper--bottom::after {
+  bottom: clamp(-51.19rem, -18.81rem - 46.67vw, -29.75rem);
+  left: clamp(-43.87rem, -16.12rem - 40vw, -25.5rem);
+  z-index: 1;
+  background-image: url("../svg/bg-pattern-footer.svg");
+  width: clamp(75.13rem, 48.53rem + 113.47vw, 127.25rem);
+  height: clamp(75.13rem, 48.53rem + 113.47vw, 127.25rem);
+}
+
 .container {
   margin-inline: auto;
   width: var(--container-width);
@@ -475,6 +505,15 @@ svg path {
   }
 }
 
+/**
+ * Make the elements have higher z-index
+ * than the background image.
+ */
+.pricing .container > * {
+  position: relative;
+  z-index: 2;
+}
+
 .pricing__card {
   box-shadow: 0 3.125rem 3.125rem -1.5625rem rgba(75, 92, 154, 0.25);
   border-radius: 0.8125rem;
@@ -520,8 +559,8 @@ svg path {
 
 .pricing__card--blue {
   background-image: url("../svg/bg-pattern-pricing.svg");
-  background-position: top center;
-  background-size: 100%;
+  background-position: top -23.6875rem center;
+  background-size: 55rem;
   background-repeat: no-repeat;
   background-color: var(--primary-color-200);
   color: var(--white-100);
@@ -613,6 +652,15 @@ svg path {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+/**
+ * Make the elements have higher z-index
+ * than the background image.
+ */
+.coming-soon .container > * {
+  position: relative;
+  z-index: 2;
 }
 
 .coming-soon__button {
