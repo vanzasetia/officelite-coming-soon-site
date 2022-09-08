@@ -35,7 +35,7 @@
       type="font/woff2"
       crossorigin
     />
-    <script src="/" defer></script>
+    <script src="/js/app.min.js" defer></script>
     <link rel="prefetch" href="/signup.html" />
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
@@ -207,23 +207,28 @@
               <div class="timer timer--dark">
                 <h2 class="timer__title">
                   Coming
-                  <span class="timer__date">4 Nov 2020</span>
+                  <time
+                    class="timer__date js-coming-soon-time"
+                    datetime="2020-11-04"
+                  >
+                    4 Nov 2020
+                  </time>
                 </h2>
                 <div class="timer__container" aria-hidden="true">
                   <div class="timer__card timer__card--dark">
-                    <span class="timer__number">47</span>
+                    <span class="timer__number js-countdown-days">47</span>
                     <span class="timer__category">days</span>
                   </div>
                   <div class="timer__card timer__card--dark">
-                    <span class="timer__number">07</span>
+                    <span class="timer__number js-countdown-hours">07</span>
                     <span class="timer__category">hours</span>
                   </div>
                   <div class="timer__card timer__card--dark">
-                    <span class="timer__number">56</span>
+                    <span class="timer__number js-countdown-minutes">56</span>
                     <span class="timer__category">min</span>
                   </div>
                   <div class="timer__card timer__card--dark">
-                    <span class="timer__number">14</span>
+                    <span class="timer__number js-countdown-seconds">14</span>
                     <span class="timer__category">sec</span>
                   </div>
                 </div>
