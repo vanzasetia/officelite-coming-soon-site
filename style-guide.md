@@ -14,11 +14,11 @@ The screenshots were taken to the following widths:
 
 ## Colors
 
-- Light blue: hsl(228, 100%, 75%);
-- Blue: hsl(228, 100%, 66%);
-- Pale blue: hsl(227, 14%, 52%);
-- Dark blue: hsl(227, 22%, 26%);
-- Very dark blue: hsl(228, 22%, 19%);
+- Very Light Blue: hsl(228, 100%, 75%);
+- Light Blue: hsl(228, 100%, 66%);
+- Dark Grayish Blue: hsl(227, 14%, 52%);
+- Very Dark Desaturated Blue: hsl(227, 22%, 26%);
+- Very Dark Blue: hsl(228, 22%, 19%);
 - Red: hsl(0, 83%, 65%);
 
 ## Typography
