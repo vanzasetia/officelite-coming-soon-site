@@ -274,6 +274,7 @@ svg path {
 }
 
 .button {
+  cursor: pointer;
   border: 0;
   border-radius: 1.75em;
   padding: 0.875rem 2.625rem;
@@ -447,11 +448,11 @@ svg path {
 }
 
 .form__input.is-invalid {
-  color: var(--error-color);
   border-block-end-color: var(--error-color);
   background-image: url("../svg/icon-cross.svg");
-  background-repeat: no-repeat;
   background-position: top 0.25rem right 1.25rem;
+  background-repeat: no-repeat;
+  color: var(--error-color);
 }
 
 .form__input--select {
@@ -850,4 +851,63 @@ svg path {
   margin-block-start: clamp(1rem, 0.74rem + 1.09vw, 1.5rem);
   -webkit-margin-after: 3.125rem;
   margin-block-end: 3.125rem;
+}
+
+.attribution {
+  padding-block: 2.5rem;
+}
+
+.attribution--center {
+  text-align: center;
+}
+
+.attribution--dark {
+  background-color: var(--primary-color-500);
+  color: var(--white-100);
+}
+
+.attribution--sign-up {
+  background-color: var(--primary-color-500);
+  color: var(--white-100);
+  text-align: center;
+}
+@media screen and (min-width: 69.375em) {
+  .attribution--sign-up {
+    text-align: left;
+    background-color: transparent;
+    color: var(--primary-color-500);
+  }
+}
+
+.attribution--dark .attribution__link {
+  color: inherit;
+}
+.attribution--dark .attribution__link:focus-visible,
+.attribution--dark .attribution__link:focus {
+  outline: 0.1875rem dotted var(--white-100);
+  outline-offset: 0.3125rem;
+}
+.attribution--dark .attribution__link:hover,
+.attribution--dark .attribution__link:active {
+  text-decoration: none;
+}
+
+.attribution--sign-up .attribution__link {
+  color: inherit;
+}
+.attribution--sign-up .attribution__link:focus-visible,
+.attribution--sign-up .attribution__link:focus {
+  outline: 0.1875rem dotted var(--white-100);
+  outline-offset: 0.3125rem;
+}
+.attribution--sign-up .attribution__link:hover,
+.attribution--sign-up .attribution__link:active {
+  text-decoration: none;
+}
+@media screen and (min-width: 69.375em) {
+  .attribution--sign-up .attribution__link:focus-visible,
+  .attribution--sign-up .attribution__link:focus {
+    outline: 0.1875rem dotted var(--primary-color-500);
+    outline-offset: 0.3125rem;
+  }
 }

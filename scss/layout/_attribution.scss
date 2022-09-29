@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+.attribution {
+  padding-block: rem(40);
+}
+
+.attribution--center {
+  text-align: center;
+}
+
+.attribution--dark {
+  background-color: var(--primary-color-500);
+  color: var(--white-100);
+}
+
+.attribution--sign-up {
+  background-color: var(--primary-color-500);
+  color: var(--white-100);
+  text-align: center;
+
+  @include breakpoint-up("small") {
+    background-color: transparent;
+    color: var(--primary-color-500);
+    text-align: left;
+  }
+}
+
+.attribution--dark .attribution__link {
+  color: inherit;
+
+  @include focus-visible(var(--white-100));
+
+  @include on-event {
+    text-decoration: none;
+  }
+}
+
+.attribution--sign-up .attribution__link {
+  color: inherit;
+
+  @include focus-visible(var(--white-100));
+
+  @include on-event {
+    text-decoration: none;
+  }
+
+  @include breakpoint-up("small") {
+    @include focus-visible(var(--primary-color-500));
+  }
+}
