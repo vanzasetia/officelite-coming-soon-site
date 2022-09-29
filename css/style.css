@@ -228,38 +228,33 @@ textarea {
   font-size: 1rem;
 }
 
+/**
+ * 1. A reset of styles, including removing the default dropdown arrow
+ * 2. Additional resets for further consistency
+ *
+ * Source: https://moderncss.dev/custom-select-styles-with-pure-css/
+ */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* 1 */
+  cursor: inherit; /* 2 */
+  margin: 0; /* 2 */
+  border: 0; /* 2 */
+  background-color: transparent; /* 2 */
+  padding: 0 1em 0 0; /* 2 */
+  width: 100%; /* 2 */
+  font-size: inherit; /* 2 */
+  line-height: inherit; /* 2 */
+  font-family: inherit; /* 2 */
+}
+
 /** 
  * Using currentColor to inherit the 
  * color value 
  */
 svg path {
   fill: currentColor;
-}
-
-.skip-content {
-  display: inline-block;
-  position: fixed;
-  top: 3rem;
-  left: 0;
-  transform: translateX(-200%);
-  z-index: 200;
-  background-color: rgb(250, 250, 250);
-  padding: 1em 2em;
-  font-size: 1.25rem;
-  -webkit-text-decoration: 0.1em solid;
-  text-decoration: 0.1em solid;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .skip-content {
-    transition: transform 0.3s ease 0s;
-  }
-}
-.skip-content:focus,
-.skip-content:focus-visible {
-  transform: translate(0);
-  outline: 0.2em dashed rgb(18, 221, 201);
-  outline-offset: 0.25em;
 }
 
 .hidden {
@@ -279,6 +274,7 @@ svg path {
 }
 
 .button {
+  border: 0;
   border-radius: 1.75em;
   padding: 0.875rem 2.625rem;
   font-weight: 700;
@@ -288,6 +284,11 @@ svg path {
 
 .button--inline-block {
   display: inline-block;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
 }
 
 .button--blue {
@@ -336,6 +337,14 @@ svg path {
   box-shadow: 0 1.5625rem 1.5625rem -0.625rem hsla(227deg, 52%, 50%, 0.247);
 }
 
+.timer--dark {
+  color: var(--white-100);
+}
+
+.timer--light {
+  color: var(--primary-color-200);
+}
+
 .timer__title {
   -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
@@ -343,6 +352,14 @@ svg path {
   font-size: 1rem;
   letter-spacing: 0.3125rem;
   text-transform: uppercase;
+}
+
+.timer__title--dark {
+  color: var(--white-100);
+}
+
+.timer__title--light {
+  color: var(--primary-color-400);
 }
 
 .timer__date {
@@ -355,15 +372,25 @@ svg path {
   gap: 1rem;
 }
 
+/**
+ * 1. Prevent the card from resizing.
+ *    The card is resizing because the width of each number
+ *    is different.
+ */
 .timer__card {
-  flex-basis: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem);
   border-radius: 0.8125rem;
   padding: 1rem;
+  min-width: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem); /* 1 */
+  max-width: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem); /* 1 */
   text-align: center;
 }
 
 .timer__card--dark {
   background-color: var(--primary-color-400);
+}
+
+.timer__card--light {
+  background-color: hsla(228deg, 100%, 66%, 0.1);
 }
 
 .timer__number {
@@ -374,12 +401,96 @@ svg path {
 .timer__category {
   display: block;
   opacity: 0.5;
+  font-weight: 700;
   font-size: clamp(0.75rem, 0.65rem + 0.51vw, 1rem);
+}
+
+.timer__category--light {
+  color: var(--primary-color-400);
+}
+
+.timer__category--dark {
+  color: var(--white-100);
+}
+
+.form {
+  box-shadow: 0 3.125rem 3.125rem -1.5625rem rgba(75, 92, 154, 0.24);
+  border-radius: 0.8125rem;
+  background-color: var(--white-100);
+  padding-inline: clamp(1.5rem, 0.25rem + 5.34vw, 2.81rem);
+  padding-block: clamp(1.5rem, 0.25rem + 5.34vw, 2.81rem);
+  width: 100%;
+}
+
+.form__wrapper:not(:last-child) {
+  -webkit-margin-after: 1.5rem;
+  margin-block-end: 1.5rem;
+}
+
+.form__input {
+  display: block;
+  border: 0;
+  -webkit-border-after: 0.0625rem solid hsla(227deg, 14%, 52%, 0.5);
+  border-block-end: 0.0625rem solid hsla(227deg, 14%, 52%, 0.5);
+  -webkit-padding-start: 1rem;
+  padding-inline-start: 1rem;
+  -webkit-padding-end: 2.8125rem;
+  padding-inline-end: 2.8125rem;
+  -webkit-padding-after: 1rem;
+  padding-block-end: 1rem;
+  width: 100%;
+}
+.form__input:focus-visible,
+.form__input:focus {
+  outline: 0.1875rem dotted var(--primary-color-200);
+  outline-offset: 0.3125rem;
+}
+
+.form__input.is-invalid {
+  color: var(--error-color);
+  border-block-end-color: var(--error-color);
+  background-image: url("../svg/icon-cross.svg");
+  background-repeat: no-repeat;
+  background-position: top 0.25rem right 1.25rem;
+}
+
+.form__input--select {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.form__select {
+  position: relative;
+}
+
+.form__select::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translate(0, -150%) rotate(45deg);
+  border-right: 0.125rem solid var(--primary-color-200);
+  border-bottom: 0.125rem solid var(--primary-color-200);
+  width: 0.75rem;
+  height: 0.75rem;
+  pointer-events: none;
+  content: "";
+}
+
+.form__button:focus-visible,
+.form__button:focus {
+  outline: 0.1875rem dotted var(--primary-color-200);
+  outline-offset: 0.3125rem;
 }
 
 .wrapper {
   position: relative;
   overflow: hidden;
+}
+
+.wrapper--sign-up {
+  margin-inline: auto;
+  max-width: 90rem;
 }
 
 .wrapper::after {
@@ -405,6 +516,26 @@ svg path {
   background-image: url("../svg/bg-pattern-footer.svg");
   width: clamp(75.13rem, 48.53rem + 113.47vw, 127.25rem);
   height: clamp(75.13rem, 48.53rem + 113.47vw, 127.25rem);
+}
+
+.wrapper--sign-up::after {
+  display: block;
+  top: 75%;
+  background-image: url("../svg/bg-pattern-side.svg");
+  background-position: center;
+  background-size: clamp(90.15rem, 44.34rem + 195.44vw, 179.93rem);
+  background-repeat: no-repeat;
+  background-color: var(--primary-color-500);
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+@media screen and (min-width: 69.375em) {
+  .wrapper--sign-up::after {
+    top: 0;
+    left: 75%;
+    background-position: top -66.8125rem left -79.9375rem;
+  }
 }
 
 .container {
@@ -677,4 +808,46 @@ svg path {
     -webkit-margin-before: 0;
     margin-block-start: 0;
   }
+}
+
+.sign-up {
+  -webkit-padding-after: 5.625rem;
+  padding-block-end: 5.625rem;
+}
+
+.sign-up .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4.06rem, 2.15rem + 8.16vw, 7.81rem);
+  max-width: 43.75rem;
+}
+@media screen and (min-width: 69.375em) {
+  .sign-up .container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: initial;
+  }
+}
+
+@media screen and (min-width: 69.375em) {
+  .sign-up .timer__container {
+    justify-content: flex-start;
+  }
+}
+
+.sign-up__text {
+  text-align: center;
+}
+@media screen and (min-width: 69.375em) {
+  .sign-up__text {
+    text-align: left;
+  }
+}
+
+.sign-up__description {
+  -webkit-margin-before: clamp(1rem, 0.74rem + 1.09vw, 1.5rem);
+  margin-block-start: clamp(1rem, 0.74rem + 1.09vw, 1.5rem);
+  -webkit-margin-after: 3.125rem;
+  margin-block-end: 3.125rem;
 }

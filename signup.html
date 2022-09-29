@@ -33,7 +33,7 @@
       type="font/woff2"
       crossorigin
     />
-    <script src="/" defer></script>
+    <script src="/js/app.min.js" defer></script>
     <link rel="prefetch" href="/" />
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
@@ -100,21 +100,213 @@
     <noscript>
       <p>Please enable JavaScript on your browser.</p>
     </noscript>
-    <header class="header">
-      <div class="container">
-        <a href="/" class="header__home">
-          <img
-            src="/svg/logo.svg"
-            alt="Officelite - Home"
-            class="header__logo"
-            width="155"
-            height="30"
-          />
-        </a>
-      </div>
-    </header>
-    <main>
-      <h1>Sign Up Page</h1>
-    </main>
+    <div class="wrapper wrapper--sign-up">
+      <header class="header">
+        <div class="container">
+          <a href="/" class="header__home">
+            <img
+              src="/svg/logo.svg"
+              alt="Officelite - Home"
+              class="header__logo"
+              width="155"
+              height="30"
+            />
+          </a>
+        </div>
+      </header>
+      <main>
+        <article class="sign-up">
+          <div class="container">
+            <div class="sign-up__text">
+              <h1 class="sign-up__title">Work smarter. Save time.</h1>
+              <p class="sign-up__description">
+                Easily manage your projects. Get on the list and receive in-app
+                perks available only to early subscribers. We are moving into
+                final development and getting ready for official launch soon.
+              </p>
+              <div class="timer timer--light">
+                <h2 class="timer__title timer__title--light">
+                  Coming
+                  <time
+                    class="timer__date js-coming-soon-time"
+                    datetime="2020-11-04"
+                  >
+                    4 Nov 2020
+                  </time>
+                </h2>
+                <p class="timer__container">
+                  <span class="timer__card timer__card--light">
+                    <span class="timer__number js-countdown-days">47</span>
+                    <span class="timer__category timer__category--light">
+                      days
+                    </span>
+                  </span>
+                  <span class="timer__card timer__card--light">
+                    <span class="timer__number js-countdown-hours">07</span>
+                    <span class="timer__category timer__category--light">
+                      hours
+                    </span>
+                  </span>
+                  <span class="timer__card timer__card--light">
+                    <span class="timer__number js-countdown-minutes">56</span>
+                    <span class="timer__category timer__category--light">
+                      min
+                    </span>
+                  </span>
+                  <span class="timer__card timer__card--light">
+                    <span class="timer__number js-countdown-seconds">14</span>
+                    <span class="timer__category timer__category--light">
+                      sec
+                    </span>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <form
+              class="sign-up__form form js-form"
+              name="waiting-list"
+              method="POST"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+            >
+              <p class="hidden">
+                <label>
+                  Don’t fill this out if you’re human:
+                  <input name="bot-field" />
+                </label>
+              </p>
+              <div class="form__wrapper">
+                <label
+                  id="name-label"
+                  class="form__label"
+                  for="name-input"
+                  hidden
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name-input"
+                  class="form__input"
+                  name="name"
+                  placeholder="Name"
+                  required
+                  aria-labelledby="name-label"
+                />
+              </div>
+              <div class="form__wrapper">
+                <label
+                  for="email-input"
+                  id="email-label"
+                  class="form__label"
+                  hidden
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email-input"
+                  class="form__input js-input"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  aria-labelledby="email-label"
+                  aria-describedby="email-alert"
+                  data-id="email"
+                />
+                <p
+                  id="email-alert"
+                  class="js-alert"
+                  aria-live="polite"
+                  hidden
+                  data-id="email"
+                ></p>
+              </div>
+              <div class="form__wrapper">
+                <label for="package-select" id="package-label" hidden
+                  >Package</label
+                >
+                <div class="form__select">
+                  <select
+                    name="package"
+                    id="package-select"
+                    class="form__input form__input--select"
+                    required
+                    aria-labelledby="package-label"
+                  >
+                    <option value="">Choose a package</option>
+                    <option value="Basic Pack Free">Basic Pack Free</option>
+                    <option value="Pro Pack $9.99">Pro Pack $9.99</option>
+                    <option value="Ultimate Pack $19.99">
+                      Ultimate Pack $19.99
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__wrapper">
+                <label
+                  for="phone-number-input"
+                  id="phone-number-label"
+                  class="form__label"
+                  hidden
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone-number-input"
+                  class="form__input js-input"
+                  name="phone-number"
+                  placeholder="Phone Number"
+                  required
+                  aria-labelledby="phone-number-label"
+                  aria-describedby="phone-number-alert"
+                  data-id="phone"
+                />
+                <p
+                  id="phone-number-alert"
+                  class="js-alert"
+                  aria-live="polite"
+                  hidden
+                  data-id="phone"
+                ></p>
+              </div>
+              <div class="form__wrapper">
+                <label
+                  for="company-input"
+                  id="company-label"
+                  class="form__label"
+                  hidden
+                >
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="company-input"
+                  class="form__input"
+                  name="company"
+                  placeholder="Company"
+                  required
+                  aria-labelledby="company-label"
+                />
+              </div>
+              <button
+                class="form__button button button--block button--blue"
+                type="submit"
+              >
+                Get on the list
+              </button>
+            </form>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
   </body>
 </html>

@@ -126,38 +126,31 @@ textarea {
   font-size: 1rem;
 }
 
+/**
+ * 1. A reset of styles, including removing the default dropdown arrow
+ * 2. Additional resets for further consistency
+ *
+ * Source: https://moderncss.dev/custom-select-styles-with-pure-css/
+ */
+select {
+  appearance: none; /* 1 */
+  cursor: inherit; /* 2 */
+  margin: 0; /* 2 */
+  border: 0; /* 2 */
+  background-color: transparent; /* 2 */
+  padding: 0 1em 0 0; /* 2 */
+  width: 100%; /* 2 */
+  font-size: inherit; /* 2 */
+  line-height: inherit; /* 2 */
+  font-family: inherit; /* 2 */
+}
+
 /** 
  * Using currentColor to inherit the 
  * color value 
  */
 svg path {
   fill: currentColor;
-}
-
-.skip-content {
-  display: inline-block;
-  position: fixed;
-  top: 3rem;
-  left: 0;
-  transform: translateX(-200%);
-  z-index: 200;
-  background-color: rgb(250, 250, 250);
-  padding: 1em 2em;
-  font-size: 1.25rem;
-  text-decoration: 0.1em solid;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .skip-content {
-    transition: transform 0.3s ease 0s;
-  }
-}
-
-.skip-content:focus,
-.skip-content:focus-visible {
-  transform: translate(0);
-  outline: 0.2em dashed rgb(18, 221, 201);
-  outline-offset: 0.25em;
 }
 
 .hidden {

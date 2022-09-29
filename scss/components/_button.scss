@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .button {
+  border: 0;
   border-radius: 1.75em;
   padding: rem(14) rem(42);
   font-weight: 700;
@@ -10,6 +11,11 @@
 
 .button--inline-block {
   display: inline-block;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
 }
 
 .button--blue {

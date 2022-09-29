@@ -1,11 +1,27 @@
 @use "../abstracts" as *;
 
+.timer--dark {
+  color: var(--white-100);
+}
+
+.timer--light {
+  color: var(--primary-color-200);
+}
+
 .timer__title {
   margin-block-end: rem(16);
   color: inherit;
   font-size: rem(16);
   letter-spacing: rem(5);
   text-transform: uppercase;
+}
+
+.timer__title--dark {
+  color: var(--white-100);
+}
+
+.timer__title--light {
+  color: var(--primary-color-400);
 }
 
 .timer__date {
@@ -18,15 +34,27 @@
   gap: rem(16);
 }
 
+/**
+ * 1. Prevent the card from resizing.
+ *    The card is resizing because the width of each number
+ *    is different.
+ */
 .timer__card {
-  flex-basis: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem);
+  $card-width: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem);
   border-radius: rem(13);
   padding: rem(16);
+  min-width: $card-width; /* 1 */
+
+  max-width: $card-width; /* 1 */
   text-align: center;
 }
 
 .timer__card--dark {
   background-color: var(--primary-color-400);
+}
+
+.timer__card--light {
+  background-color: hsla(228, 100%, 66%, 0.1);
 }
 
 .timer__number {
@@ -37,5 +65,14 @@
 .timer__category {
   display: block;
   opacity: 0.5;
+  font-weight: 700;
   font-size: clamp(0.75rem, 0.65rem + 0.51vw, 1rem);
+}
+
+.timer__category--light {
+  color: var(--primary-color-400);
+}
+
+.timer__category--dark {
+  color: var(--white-100);
 }

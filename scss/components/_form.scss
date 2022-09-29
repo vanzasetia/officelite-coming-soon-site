@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+.form {
+  box-shadow: 0 rem(50) rem(50) rem(-25) rgba(75, 92, 154, 0.24);
+  border-radius: rem(13);
+  background-color: var(--white-100);
+  padding-inline: clamp(1.5rem, calc(0.25rem + 5.34vw), 2.81rem);
+  padding-block: clamp(1.5rem, calc(0.25rem + 5.34vw), 2.81rem);
+  width: 100%;
+}
+
+.form__wrapper:not(:last-child) {
+  margin-block-end: rem(24);
+}
+
+.form__input {
+  display: block;
+  border: 0;
+  border-block-end: rem(1) solid hsla(227, 14%, 52%, 0.5);
+  padding-inline-start: rem(16);
+  padding-inline-end: rem(45);
+  padding-block-end: rem(16);
+  width: 100%;
+
+  @include focus-visible(var(--primary-color-200));
+}
+
+.form__input.is-invalid {
+  border-block-end-color: var(--error-color);
+  background-image: url("../svg/icon-cross.svg");
+  background-position: top rem(4) right rem(20);
+  background-repeat: no-repeat;
+  color: var(--error-color);
+}
+
+.form__input--select {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.form__select {
+  position: relative;
+}
+
+.form__select::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: rem(16);
+  transform: translate(0, -150%) rotate(45deg);
+  border-right: rem(2) solid var(--primary-color-200);
+  border-bottom: rem(2) solid var(--primary-color-200);
+  width: rem(12);
+  height: rem(12);
+  pointer-events: none;
+  content: "";
+}
+
+.form__button {
+  @include focus-visible(var(--primary-color-200));
+}

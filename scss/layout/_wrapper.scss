@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.wrapper--sign-up {
+  margin-inline: auto;
+  max-width: rem(1440);
+}
+
 .wrapper::after {
   position: absolute;
   z-index: -1;
@@ -28,4 +33,23 @@
   background-image: url("../svg/bg-pattern-footer.svg");
   width: clamp(75.13rem, calc(48.53rem + 113.47vw), 127.25rem);
   height: clamp(75.13rem, calc(48.53rem + 113.47vw), 127.25rem);
+}
+
+.wrapper--sign-up::after {
+  display: block;
+  top: 75%;
+  background-image: url("../svg/bg-pattern-side.svg");
+  background-position: center;
+  background-size: clamp(90.15rem, calc(44.34rem + 195.44vw), 179.93rem);
+  background-repeat: no-repeat;
+  background-color: var(--primary-color-500);
+  width: 100%;
+  height: 100%;
+  content: "";
+
+  @include breakpoint-up("small") {
+    top: 0;
+    left: 75%;
+    background-position: top -66.8125rem left -79.9375rem;
+  }
 }
