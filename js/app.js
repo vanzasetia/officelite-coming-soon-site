@@ -158,5 +158,5 @@
 
   setInterval(countDown, MILLISECONDS_PER_SECOND);
   document.addEventListener("DOMContentLoaded", showComingSoonDate);
-  form.addEventListener("submit", validateForm);
+  form?.addEventListener("submit", validateForm);
 })();
