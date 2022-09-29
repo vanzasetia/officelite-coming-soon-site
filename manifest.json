@@ -1,7 +1,7 @@
 {
   "name": "Online Management of Your Team’s Work - Officelite",
 	"short_name": "Officelite",
-	"description": "With Officelite, you can work from anywhere at any time. With Officelite, you can keep remote and distributed teams, as well as your entire organization, focused on their goals, projects, and tasks.",
+	"description": "With Officelite, you can keep remote and distributed teams, as well as your entire organization, focused on their goals, projects, and tasks.",
 	"start_url": "/",
 	"scope": "/",
   "icons": [
