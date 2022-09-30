@@ -2,11 +2,11 @@
 
 <p align="left">
   <a href="https://www.frontendmentor.io/challenges?difficulties=2"><img src="https://img.shields.io/badge/Difficulty-Junior-91BD28?style=for-the-badge&logo=frontendmentor" alt="Challenge Difficulty - Junior"></a>
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/vanzasetia/reponame?style=for-the-badge&logo=github">
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/vanzasetia/officelite-coming-soon-site?style=for-the-badge&logo=github">
   <a href="https://twitter.com/vanzasetia"><img src="https://img.shields.io/twitter/follow/vanzasetia?logo=twitter&style=for-the-badge" alt="Twitter followers." /></a>
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/vanzasetia/reponame?style=for-the-badge&logo=git">
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/vanzasetia/officelite-coming-soon-site?style=for-the-badge&logo=git">
   <img alt="Netlify" src="https://img.shields.io/netlify/7131098f-c84e-4d75-bed8-d45680e57af5?style=for-the-badge&logo=netlify">
-  <img alt="License" src="https://img.shields.io/github/license/vanzasetia/reponame?color=green&style=for-the-badge&logo=github">
+  <img alt="License" src="https://img.shields.io/github/license/vanzasetia/officelite-coming-soon-site?color=green&style=for-the-badge&logo=github">
 </p>
 
 <p>
@@ -29,13 +29,10 @@
   - [Introduction](#introduction)
   - [The challenge](#the-challenge)
   - [Links](#links)
-  - [Screenshots](#screenshots)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
 - [References](#references)
 
@@ -43,7 +40,7 @@
 [(Back to top)](#table-of-contents)
 
 ### Introduction
-Welcome to the `README.md` of this repo! The purpose of creating this project is to sharpen my coding skill.
+Welcome to the `README.md` of this repo! The purpose of creating this project is to practice using modern CSS such as `clamp()`, `calc()`, CSS logical properties, and much more.
 
 In this file I'm going to tell you everything, starting from tools that I used, and much more.
 
@@ -51,33 +48,40 @@ That's it for the introduction and **happy reading!**
 
 ### The Challenge
 
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- See error states when the contact form is submitted if:
+  - The Phone Number and/or Email Address fields are empty
+  - The Email Address is not formatted correctly
+- See visible focus states for interactive elements when navigating by keyboard
+- Understand and be able to navigate page content while using assistive technology
+- **Bonus**: See a live countdown timer that ticks down every second
+- **Bonus**: See a custom-styled select form control in the sign-up form
+
 ### Links
 - [Live Review](https://officelitetool.netlify.app/)
-- [Frontend Mentor Solution Page]()
-
-### Screenshots
-
-![Desktop - Home Page]()
-
-![Desktop - Sign-up Page]()
+- [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/officelite-coming-soon-site-html-css-sass-javascript-1G1soh4Ah6)
 
 ## My Process
 [(Back to top)](#table-of-contents)
 
 ### Built With
-- **Following best practices**\* 
 - HTML Semantic Tags
-- [BEM (Block, Element, Modifier)](https://sparkbox.com/foundry/bem_by_example) Class *Naming Convention*
+- [BEM (Block, Element, Modifier)](https://sparkbox.com/foundry/bem_by_example)
 - [Sass](https://sass-lang.com/)
 - JavaScript
 - CSS Flexbox
+- CSS Grid
+- CSS Logical Properties
+- Fluid Typography
+- Fluid Space
 - Mobile-first workflow
 
-> \* I follow guidelines. [See what guidelines that I follow.](./docs/README.md#guidelines)
-
-### What I Learned
-
 ### Useful Resources
+
+- [Andy Bell – Be the browser’s mentor, not its micromanager - YouTube](https://youtu.be/5uhIiI9Ld5M) - This video helped me understand the fluid type and fluid space. This approach helped reduce the amount of media queries by using modern CSS such as `clamp()`, `calc()`, and much more!
+- [Stephanie Eeckles - Scaling CSS Layout Beyond Pixels - YouTube](https://youtu.be/8slZJrTK3nE) - This video helped me understand how to use modern CSS such as using `clamp()`, CSS Grid (`minmax()`, `auto-fit`, etc), and much more!
+- [Utopia](https://utopia.fyi/) - This a great calculator that helped generating `clamp()` functions. It helped me creating fluid space and fluid typography easily.
 
 ## Author
 [(Back to top)](#table-of-contents)
@@ -87,20 +91,12 @@ That's it for the introduction and **happy reading!**
 - Code Newbie - [@vanzasetia](https://community.codenewbie.org/vanzasetia)
 - Want to see me on other platforms? [Check my linktree!](https://linktr.ee/vanzasetia)
 
-## Acknowledgements
-[(Back to top)](#table-of-contents)
-
 ## License
 [(Back to top)](#table-of-contents)
 
 >You can check out [the full license](./LICENSE)
 
 This project is licensed under the terms of the MIT license.
-
-For those of you who are wondering, why do I need to license this? 
-- Well, first it's free. 😆
-- Second I checked this [Choose license website](https://choosealicense.com/) to help me chose a license.
-- The last reason, if I don't want to choose a license, then [here's what gonna happen](https://choosealicense.com/no-permission/).
 
 ## References
 [(Back to top)](#table-of-contents)

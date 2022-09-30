@@ -1,17 +1,5 @@
 # Front-end Style Guide (Not Official)
 
-## Layout
-
-The screenshots were taken to the following widths:
-
-- Home Page
-  - Mobile: 375px [(Preview)]()
-  - Desktop: 1440px [(Preview)]()
-
-- Sign-up Page
-  - Mobile: 375px [(Preview)]()
-  - Desktop: 1440px [(Preview)]()
-
 ## Colors
 
 - Very Light Blue: hsl(228, 100%, 75%);
