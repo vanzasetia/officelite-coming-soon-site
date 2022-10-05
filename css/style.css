@@ -12,14 +12,13 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  text-rendering: optimizeSpeed;
   min-height: 100vh;
   line-height: 1.5;
+  text-rendering: optimizeSpeed;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -117,11 +116,8 @@ textarea {
   *,
   *::before,
   *::after {
-    -webkit-animation-duration: 1ms !important;
     animation-duration: 1ms !important;
-    -webkit-animation-delay: -1ms !important;
     animation-delay: -1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
     transition-delay: 0s !important;
     transition-duration: 0s !important;
@@ -139,11 +135,6 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-::-moz-selection {
-  background-color: rgb(22, 95, 204);
-  color: rgb(242, 242, 242);
 }
 
 ::selection {
@@ -235,8 +226,6 @@ textarea {
  * Source: https://moderncss.dev/custom-select-styles-with-pure-css/
  */
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none; /* 1 */
   cursor: inherit; /* 2 */
   margin: 0; /* 2 */
@@ -347,7 +336,6 @@ svg path {
 }
 
 .timer__title {
-  -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
   color: inherit;
   font-size: 1rem;
@@ -424,20 +412,15 @@ svg path {
 }
 
 .form__wrapper:not(:last-child) {
-  -webkit-margin-after: 1.5rem;
   margin-block-end: 1.5rem;
 }
 
 .form__input {
   display: block;
   border: 0;
-  -webkit-border-after: 0.0625rem solid hsla(227deg, 14%, 52%, 0.5);
   border-block-end: 0.0625rem solid hsla(227deg, 14%, 52%, 0.5);
-  -webkit-padding-start: 1rem;
   padding-inline-start: 1rem;
-  -webkit-padding-end: 2.8125rem;
   padding-inline-end: 2.8125rem;
-  -webkit-padding-after: 1rem;
   padding-block-end: 1rem;
   width: 100%;
 }
@@ -545,9 +528,7 @@ svg path {
 }
 
 .header {
-  -webkit-padding-before: var(--padding-header-small);
   padding-block-start: var(--padding-header-small);
-  -webkit-padding-after: var(--padding-header-medium);
   padding-block-end: var(--padding-header-medium);
 }
 
@@ -587,14 +568,12 @@ svg path {
 
 .hero__image {
   margin-inline: auto;
-  -webkit-margin-after: 4rem;
   margin-block-end: 4rem;
   width: clamp(10.9375rem, 35vw, 29.6875rem);
 }
 @media screen and (min-width: 48em) {
   .hero__image {
     margin-inline: 0;
-    -webkit-margin-after: 0;
     margin-block-end: 0;
   }
 }
@@ -721,28 +700,23 @@ svg path {
 }
 
 .pricing__title {
-  -webkit-margin-after: 2.5rem;
   margin-block-end: 2.5rem;
   font-size: 1.25rem;
 }
 @media screen and (min-width: 40em) {
   .pricing__title {
-    -webkit-margin-after: 1rem;
     margin-block-end: 1rem;
   }
 }
 
 .pricing__price {
-  -webkit-margin-after: 0.5rem;
   margin-block-end: 0.5rem;
   font-weight: 700;
   font-size: 3.5rem;
 }
 
 .pricing__benefits {
-  -webkit-margin-before: 3.5rem;
   margin-block-start: 3.5rem;
-  -webkit-margin-after: 2rem;
   margin-block-end: 2rem;
 }
 @media screen and (min-width: 40em) {
@@ -752,22 +726,18 @@ svg path {
 }
 
 .pricing__item:not(:last-child) {
-  -webkit-margin-after: 1rem;
   margin-block-end: 1rem;
 }
 
 @media screen and (min-width: 40em) {
   .pricing__button {
     grid-area: button;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
   }
 }
 
 .coming-soon {
   background-color: var(--primary-color-500);
-  -webkit-padding-after: 6.25rem;
   padding-block-end: 6.25rem;
   color: var(--white-100);
   text-align: center;
@@ -796,7 +766,6 @@ svg path {
 }
 
 .coming-soon__button {
-  -webkit-margin-before: 3rem;
   margin-block-start: 3rem;
 }
 .coming-soon__button:focus-visible,
@@ -806,13 +775,11 @@ svg path {
 }
 @media screen and (min-width: 69.375em) {
   .coming-soon__button {
-    -webkit-margin-before: 0;
     margin-block-start: 0;
   }
 }
 
 .sign-up {
-  -webkit-padding-after: 5.625rem;
   padding-block-end: 5.625rem;
 }
 
@@ -847,9 +814,7 @@ svg path {
 }
 
 .sign-up__description {
-  -webkit-margin-before: clamp(1rem, 0.74rem + 1.09vw, 1.5rem);
   margin-block-start: clamp(1rem, 0.74rem + 1.09vw, 1.5rem);
-  -webkit-margin-after: 3.125rem;
   margin-block-end: 3.125rem;
 }
 
@@ -873,9 +838,9 @@ svg path {
 }
 @media screen and (min-width: 69.375em) {
   .attribution--sign-up {
-    text-align: left;
     background-color: transparent;
     color: var(--primary-color-500);
+    text-align: left;
   }
 }
 
