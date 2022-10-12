@@ -33,11 +33,11 @@
 }
 
 .button--light-blue {
-  background-color: hsla(228, 100%, 66%, 0.15);
+  background-color: hsl(228deg 100% 66% / 15%);
   color: var(--primary-color-200);
 
   @include on-event {
-    background-color: hsla(228, 100%, 66%, 0.25);
+    background-color: hsl(228deg 100% 66% / 25%);
   }
 
   @include prefers-motion {
@@ -59,5 +59,5 @@
 }
 
 .button--box-shadow {
-  box-shadow: 0 rem(25) rem(25) rem(-10) hsla(227, 52%, 50%, 0.247);
+  box-shadow: 0 rem(25) rem(25) rem(-10) hsl(227deg 52% 50% / 24.7%);
 }

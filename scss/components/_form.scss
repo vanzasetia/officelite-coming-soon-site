@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .form {
-  box-shadow: 0 rem(50) rem(50) rem(-25) rgba(75, 92, 154, 0.24);
+  box-shadow: 0 rem(50) rem(50) rem(-25) rgb(75 92 154 / 24%);
   border-radius: rem(13);
   background-color: var(--white-100);
   padding-inline: clamp(1.5rem, calc(0.25rem + 5.34vw), 2.81rem);
@@ -16,7 +16,7 @@
 .form__input {
   display: block;
   border: 0;
-  border-block-end: rem(1) solid hsla(227, 14%, 52%, 0.5);
+  border-block-end: rem(1) solid hsl(227deg 14% 52% / 50%);
   padding-inline-start: rem(16);
   padding-inline-end: rem(45);
   padding-block-end: rem(16);

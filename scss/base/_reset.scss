@@ -1,14 +1,14 @@
 @use "../abstracts" as *;
 
 :root {
-  --primary-color-100: hsl(228, 100%, 75%);
-  --primary-color-200: hsl(228, 100%, 66%);
-  --primary-color-300: hsl(227, 14%, 52%);
-  --primary-color-400: hsl(227, 22%, 26%);
-  --primary-color-500: hsl(228, 22%, 19%);
-  --error-color: hsl(0, 83%, 65%);
-  --white-100: hsl(0, 0%, 100%);
-  --white-200: hsl(0, 0%, 98%);
+  --primary-color-100: hsl(228deg 100% 75%);
+  --primary-color-200: hsl(228deg 100% 66%);
+  --primary-color-300: hsl(227deg 14% 52%);
+  --primary-color-400: hsl(227deg 22% 26%);
+  --primary-color-500: hsl(228deg 22% 19%);
+  --error-color: hsl(0deg 83% 65%);
+  --white-100: hsl(0deg 0% 100%);
+  --white-200: hsl(0deg 0% 98%);
   --landmarks-font-size: clamp(1rem, 0.95rem + 0.26vw, 1.13rem);
   --title-font-size: clamp(2.19rem, 1.66rem + 2.66vw, 3.5rem);
   --container-width: min(100vw - 10%, #{rem(1110)});
@@ -45,13 +45,8 @@ html {
 }
 
 ::selection {
-  background-color: rgb(22, 95, 204);
-  color: rgb(242, 242, 242);
-}
-
-::-moz-selection {
-  background-color: rgb(22, 95, 204);
-  color: rgb(242, 242, 242);
+  background-color: rgb(22 95 204);
+  color: rgb(242 242 242);
 }
 
 /**
@@ -62,7 +57,6 @@ html {
  * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
  */
 .sr-only {
-  -webkit-clip-path: inset(50%) !important;
   position: absolute !important;
   clip-path: inset(50%) !important;
   margin: -1px !important;

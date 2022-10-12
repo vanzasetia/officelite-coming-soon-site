@@ -41,10 +41,10 @@
  */
 .timer__card {
   $card-width: clamp(3.75rem, 2.74rem + 5.06vw, 6.25rem);
+
   border-radius: rem(13);
   padding: rem(16);
   min-width: $card-width; /* 1 */
-
   max-width: $card-width; /* 1 */
   text-align: center;
 }
@@ -54,7 +54,7 @@
 }
 
 .timer__card--light {
-  background-color: hsla(228, 100%, 66%, 0.1);
+  background-color: hsl(228deg 100% 66% / 10%);
 }
 
 .timer__number {
