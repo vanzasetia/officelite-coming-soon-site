@@ -31,6 +31,7 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I Learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [License](#license)
@@ -76,6 +77,147 @@ That's it for the introduction and **happy reading!**
 - Fluid Typography
 - Fluid Space
 - Mobile-first workflow
+
+### What I Learned
+
+#### Separation of Concerns
+
+HTML, CSS, and JavaScript are three different things. As a developer, I should not mix them as much as possible.
+
+> Learn more about [separation of concerns at Wikipedia](https://en.wikipedia.org/wiki/Separation_of_concerns)
+
+I am going to use the following HTML markup to show you how we can apply that in practice.
+
+```html
+<div class="form__wrapper">
+  <label
+    for="email-input"
+    id="email-label"
+    class="form__label"
+    hidden
+  >
+    Email Address
+  </label>
+  <input
+    type="email"
+    id="email-input"
+    class="form__input js-input"
+    name="email"
+    placeholder="Email Address"
+    required
+    aria-labelledby="email-label"
+    aria-describedby="email-alert"
+    data-id="email"
+  />
+  <p
+    id="email-alert"
+    class="js-alert"
+    aria-live="polite"
+    hidden
+    data-id="email"
+  ></p>
+</div>
+```
+
+There are a lot of things going on in this HTML markup. So, let me explain it.
+
+##### Accessibility
+
+First, let's focus only on the HTML markup. This is where the accessibility is happening.
+
+```html
+<div>
+  <label
+    for="email-input"
+    id="email-label"
+    hidden
+  >
+    Email Address
+  </label>
+  <input
+    type="email"
+    id="email-input"
+    name="email"
+    placeholder="Email Address"
+    required
+    aria-labelledby="email-label"
+    aria-describedby="email-alert"
+  />
+  <p
+    id="email-alert"
+    aria-live="polite"
+    hidden
+  ></p>
+</div>
+```
+
+There are five important things here.
+
+- The input has a hidden label.
+- Correct `type` for the `input`.
+- The `p` for the input error message is linked with `aria-describedby`.
+- The `p` also has `aria-live` attribute to make screen readers pronounce it when the error message is in the `p`.
+- The `p` is hidden since the error message won't be visible. So, when the input is invalid state the `hidden` will be replaced by `sr-only` class.
+
+##### Styling
+
+Second, I should be able to focus on the same HTML markup but with "CSS in mind". So, I should only care about styling.
+
+Don't use `aria-live` as the selector because it has nothing to do with CSS. It's for accessibility.
+
+Don't make the CSS selector like the structure of the HTML. For example, `div > label`. It's because if I decided to have another `div` that wrapped the `label` then, the styling will be broken.
+
+So, I need to have class only for styling purposes. This way, if I change the HTML, the styling won't get affected.
+
+```html
+<div class="form__wrapper">
+  <label>
+    Email Address
+  </label>
+  <input class="form__input" />
+  <p></p>
+</div>
+```
+
+For the styling, I only need to care about the `div` and the `input`. The `label` is hidden and so is the `p`.
+
+Then, when the input is in an invalid state, there should be `is-invalid` class.
+
+```html
+<input class="form__input is-invalid" />
+```
+
+##### JavaScript
+
+Lastly, for JavaScript, I will use `js-` class selectors to grab the DOM elements. This way, the CSS selectors and the JavaScript selectors are separated.
+
+```html
+<div>
+  <label>
+    Email Address
+  </label>
+  <input class="js-input" data-id="email" />
+  <p data-id="email"></p>
+</div>
+```
+
+I use `data-id` to match the `input` and the associated error message.
+
+Of course, I can do the following inside to select the error message the JavaScript.
+
+```javascript
+const handleAlert = (message, input) => {
+  const inputParentElement = input.parentElement;
+  const alert = inputParentElement.querySelector(".js-alert");
+  showAlert(message, alert, input);
+}
+```
+
+But, this JavaScript code is *always* assumes that the alert element has the same parent element as the `input`. So, if in the future the error message is not having the same parent element. Then, I need to refactor my JavaScript.
+
+So, by using `data-id`, I don't need to worry about the HTML structure. The error element can be everywhere and it will always be matching with the `input`.
+
+This is how I apply the separation of concerns principle. 😎
 
 ### Useful Resources
 
