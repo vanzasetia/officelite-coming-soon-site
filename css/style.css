@@ -279,7 +279,7 @@ svg path {
 .button--blue:active {
   background-color: var(--primary-color-100);
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--blue {
     transition: background-color var(--transition);
   }
@@ -293,7 +293,7 @@ svg path {
 .button--light-blue:active {
   background-color: hsla(228deg, 100%, 66%, 0.25);
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--light-blue {
     transition: background-color var(--transition);
   }
@@ -307,7 +307,7 @@ svg path {
 .button--white:active {
   color: var(--primary-color-100);
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--white {
     transition: color var(--transition);
   }
